@@ -35,7 +35,7 @@ namespace Praktikant.Services {
 					fitness += ColorFit;
 				}
 				else {
-					fitness += ColorFit / 2;
+					fitness += WeightFit;
 				}
 
 				var c = PercentDeviation(match.Weight, fruit.Weight);
