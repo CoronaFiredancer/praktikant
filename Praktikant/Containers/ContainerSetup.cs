@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Praktikant.Interfaces;
+using Praktikant.Models;
 using Praktikant.Services;
 
 namespace Praktikant.Containers {
@@ -14,6 +15,7 @@ namespace Praktikant.Containers {
 			builder.RegisterType<FruitPrompterService>().As<IFruitPrompter>();
 			builder.RegisterType<FruitPickerService>().As<IFruitPicker>();
 			builder.RegisterType<FitnessOutputService>().As<IOutputService>();
+			builder.RegisterType<FruitMachineDataContext>().As<IDbHandler>();
 			builder.RegisterType<FruitMixer>();
 
 			return builder.Build();

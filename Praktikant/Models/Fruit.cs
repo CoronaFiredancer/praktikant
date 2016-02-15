@@ -1,4 +1,6 @@
-﻿namespace Praktikant.Models {
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Praktikant.Models {
 	public enum FruitColor {
 		None, Green, Red, Yellow
 	}
@@ -7,8 +9,10 @@
 		None, Apple, Pear, Banana
 	}
 
+	[Table(name: "Fruits")]
 	public class Fruit {
 
+		public int FruitID { get; set; }
 		public FruitType Type { get; set; }
 		public FruitColor Color { get; set; }
 		public int Weight { get; set; }

@@ -16,6 +16,9 @@ namespace Praktikant {
 		}
 
 		public void Run() {
+
+
+
 			var fruits = provider.Provide(100);
 
 			var fruitWish = prompter.Prompt();
