@@ -3,7 +3,7 @@ using System.Data.Entity;
 
 namespace FruitMachine.Models
 {
-	public partial class FruitMachineDataContext : DbContext, IDbHandler
+	public class FruitMachineDbContext : DbContext, IDbHandler
 	{
 		public DbSet<Fruit> Fruits { get; set; }
 		//public DbSet<FruitColor> FruitColors { get; set; }

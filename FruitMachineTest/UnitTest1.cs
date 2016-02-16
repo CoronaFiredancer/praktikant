@@ -12,7 +12,7 @@ namespace FruitMachineTest
 		public void TestMethod1()
 		{
 			int count;
-			using (var dbcontext = new FruitMachineDataContext())
+			using (var dbcontext = new FruitMachineDbContext())
 			{
 				var fruits = dbcontext.Fruits;
 

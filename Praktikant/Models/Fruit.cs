@@ -10,7 +10,7 @@ namespace FruitMachine.Models {
 	}
 
 	[Table(name: "Fruits")]
-	public partial class Fruit {
+	public class Fruit {
 
 		public int FruitID { get; set; }
 		public FruitType Type { get; set; }

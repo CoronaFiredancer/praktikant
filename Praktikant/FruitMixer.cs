@@ -1,4 +1,5 @@
 ﻿using FruitMachine.Interfaces;
+using FruitMachine.Models;
 
 namespace FruitMachine {
 	public  class FruitMixer {
@@ -7,12 +8,14 @@ namespace FruitMachine {
 		private readonly IFruitPrompter prompter;
 		private readonly IFruitPicker picker;
 		private readonly IOutputService outputService;
+		private readonly IDbHandler _dbHandler;
 
-		public FruitMixer(IFruitProvider provider, IFruitPrompter prompter, IFruitPicker picker, IOutputService outputService) {
+		public FruitMixer(IFruitProvider provider, IFruitPrompter prompter, IFruitPicker picker, IOutputService outputService, IDbHandler dbHandler) {
 			this.provider = provider;
 			this.prompter = prompter;
 			this.picker = picker;
 			this.outputService = outputService;
+			_dbHandler = dbHandler;
 		}
 
 		public void Run() {

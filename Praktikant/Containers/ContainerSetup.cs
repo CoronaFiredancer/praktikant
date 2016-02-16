@@ -15,7 +15,7 @@ namespace FruitMachine.Containers {
 			builder.RegisterType<FruitPrompterService>().As<IFruitPrompter>();
 			builder.RegisterType<FruitPickerService>().As<IFruitPicker>();
 			builder.RegisterType<FitnessOutputService>().As<IOutputService>();
-			builder.RegisterType<FruitMachineDataContext>().As<IDbHandler>();
+			builder.RegisterType<FruitMachineDbContext>().As<IDbHandler>();
 			builder.RegisterType<FruitMixer>();
 
 			return builder.Build();

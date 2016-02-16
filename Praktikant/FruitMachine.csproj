@@ -61,7 +61,7 @@
     <Compile Include="Interfaces\IFruitProvider.cs" />
     <Compile Include="Interfaces\IFruitPrompter.cs" />
     <Compile Include="Interfaces\IOutputService.cs" />
-    <Compile Include="Models\FruitMachineDataContext.cs" />
+    <Compile Include="Models\FruitMachineDbContext.cs" />
     <Compile Include="Models\IDbHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Models\Fruit.cs" />
