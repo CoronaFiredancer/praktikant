@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Praktikant.Models;
+using FruitMachine.Models;
 
-namespace Praktikant.Interfaces {
+namespace FruitMachine.Interfaces {
 	public interface IFruitPicker {
 		KeyValuePair<Fruit, float> PickFruit(IEnumerable<Fruit> fruits, Fruit match);
 	}

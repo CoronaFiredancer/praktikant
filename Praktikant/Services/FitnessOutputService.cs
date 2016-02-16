@@ -1,8 +1,8 @@
 ﻿using System;
-using Praktikant.Interfaces;
-using Praktikant.Models;
+using FruitMachine.Interfaces;
+using FruitMachine.Models;
 
-namespace Praktikant.Services {
+namespace FruitMachine.Services {
 	public class FitnessOutputService : IOutputService {
 
 		public void PrintResult(Fruit fruit, float fitness) {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Praktikant.Interfaces;
-using Praktikant.Models;
+using FruitMachine.Interfaces;
+using FruitMachine.Models;
 
-namespace Praktikant.Services {
+namespace FruitMachine.Services {
 	public class FruitRandomizerService : IFruitProvider {
 
 		public IEnumerable<Fruit> Provide(int howMany) {

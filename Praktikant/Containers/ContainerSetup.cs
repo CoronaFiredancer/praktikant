@@ -1,9 +1,9 @@
 ﻿using Autofac;
-using Praktikant.Interfaces;
-using Praktikant.Models;
-using Praktikant.Services;
+using FruitMachine.Interfaces;
+using FruitMachine.Models;
+using FruitMachine.Services;
 
-namespace Praktikant.Containers {
+namespace FruitMachine.Containers {
 	public class ContainerSetup {
 
 		private ContainerBuilder builder;

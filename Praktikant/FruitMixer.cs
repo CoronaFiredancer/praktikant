@@ -1,6 +1,6 @@
-﻿using Praktikant.Interfaces;
+﻿using FruitMachine.Interfaces;
 
-namespace Praktikant {
+namespace FruitMachine {
 	public  class FruitMixer {
 
 		private readonly IFruitProvider provider;

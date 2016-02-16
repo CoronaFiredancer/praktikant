@@ -1,8 +1,8 @@
 ﻿using System;
 using Autofac;
-using Praktikant.Containers;
+using FruitMachine.Containers;
 
-namespace Praktikant
+namespace FruitMachine
 {
     public class Program
     {

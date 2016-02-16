@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Praktikant.Interfaces;
-using Praktikant.Models;
+using FruitMachine.Interfaces;
+using FruitMachine.Models;
 
-namespace Praktikant.Services {
+namespace FruitMachine.Services {
 	public class FruitPickerService : IFruitPicker {
 		private const float TypeFit = 0.7f;
 		private const float ColorFit = 0.2f;

@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Praktikant.Models
+namespace FruitMachine.Models
 {
-	public class FruitMachineDataContext : DbContext, IDbHandler
+	public partial class FruitMachineDataContext : DbContext, IDbHandler
 	{
 		public DbSet<Fruit> Fruits { get; set; }
+		//public DbSet<FruitColor> FruitColors { get; set; }
+		//public DbSet<FruitType> FruitTypes { get; set; } 
 
 		public int RecordCount(string tableName)
 		{

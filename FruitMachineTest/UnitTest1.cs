@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using FruitMachine.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FruitMachineTest
@@ -9,6 +11,16 @@ namespace FruitMachineTest
 		[TestMethod]
 		public void TestMethod1()
 		{
+			int count;
+			using (var dbcontext = new FruitMachineDataContext())
+			{
+				var fruits = dbcontext.Fruits;
+
+				count = fruits.Count();
+			}
+
+			Assert.AreEqual(0, count);
+
 		}
 	}
 }

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Praktikant.Models {
+namespace FruitMachine.Models {
 	public enum FruitColor {
 		None, Green, Red, Yellow
 	}
@@ -10,7 +10,7 @@ namespace Praktikant.Models {
 	}
 
 	[Table(name: "Fruits")]
-	public class Fruit {
+	public partial class Fruit {
 
 		public int FruitID { get; set; }
 		public FruitType Type { get; set; }

@@ -1,8 +1,8 @@
 ﻿using System;
-using Praktikant.Interfaces;
-using Praktikant.Models;
+using FruitMachine.Interfaces;
+using FruitMachine.Models;
 
-namespace Praktikant.Services {
+namespace FruitMachine.Services {
 	public class FruitPrompterService : IFruitPrompter{
 		public Fruit Prompt() {
 			Console.WriteLine("What are you looking for?");

@@ -7,8 +7,8 @@
     <ProjectGuid>{9E73A202-494F-414C-BB23-89668AECBC1D}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Praktikant</RootNamespace>
-    <AssemblyName>Praktikant</AssemblyName>
+    <RootNamespace>FruitMachine</RootNamespace>
+    <AssemblyName>FruitMachine</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

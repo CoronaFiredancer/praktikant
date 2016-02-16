@@ -1,4 +1,4 @@
-﻿namespace Praktikant.Models
+﻿namespace FruitMachine.Models
 {
 	public interface IDbHandler
 	{
