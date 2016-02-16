@@ -1,5 +1,6 @@
-﻿using FruitMachine.Interfaces;
+﻿using System.Data.Entity;
 using FruitMachine.Models;
+using FruitMachine.Services.Interfaces;
 
 namespace FruitMachine {
 	public  class FruitMixer {
@@ -20,15 +21,22 @@ namespace FruitMachine {
 
 		public void Run() {
 
+			using (var dbContext = _dbHandler as FruitMachineDbContext)
+			{
+				int count;
+				if (dbContext != null)
+				{
+					var fruits = dbContext.Fruits;
+				}
+			}
 
+			//var fruits = provider.Provide(10);
 
-			var fruits = provider.Provide(100);
+			//var fruitWish = prompter.Prompt();
 
-			var fruitWish = prompter.Prompt();
+			//var whatYouGet = picker.PickFruit(fruits, fruitWish);
 
-			var whatYouGet = picker.PickFruit(fruits, fruitWish);
-
-			outputService.PrintResult(whatYouGet.Key, whatYouGet.Value);
+			//outputService.PrintResult(whatYouGet.Key, whatYouGet.Value);
 		}
 	}
 }

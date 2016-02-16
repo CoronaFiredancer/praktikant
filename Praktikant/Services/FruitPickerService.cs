@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using FruitMachine.Interfaces;
 using FruitMachine.Models;
+using FruitMachine.Services.Interfaces;
 
 namespace FruitMachine.Services {
 	public class FruitPickerService : IFruitPicker {

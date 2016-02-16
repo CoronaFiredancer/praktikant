@@ -4,10 +4,11 @@ using FruitMachine.Containers;
 
 namespace FruitMachine
 {
-    public class Program
-    {
-	    public static void Main(string[] args) {
-		    
+	public class Program
+	{
+		public static void Main(string[] args)
+		{
+
 			/*
 			 * This is tightly coupled, we can do better
 			var provider = new FruitRandomizerService();
@@ -21,12 +22,10 @@ namespace FruitMachine
 			 * */
 
 			var containerSetup = new ContainerSetup();
-		    var container = containerSetup.BuildContainer();
+			var container = containerSetup.BuildContainer();
 			container.Resolve<FruitMixer>().Run();
-			
-		    while (Console.ReadLine() != "x") {
-			    
-		    }
-	    }
-    }
+
+			Console.ReadLine();
+		}
+	}
 }

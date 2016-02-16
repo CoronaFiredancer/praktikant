@@ -1,6 +1,6 @@
 ﻿using System;
-using FruitMachine.Interfaces;
 using FruitMachine.Models;
+using FruitMachine.Services.Interfaces;
 
 namespace FruitMachine.Services {
 	public class FruitPrompterService : IFruitPrompter{

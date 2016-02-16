@@ -1,7 +1,9 @@
-﻿namespace FruitMachine.Models
+﻿using System;
+
+namespace FruitMachine.Models
 {
-	public interface IDbHandler
+	public interface IDbHandler : IDisposable
 	{
-		int RecordCount(string tableName);
+		
 	}
 }

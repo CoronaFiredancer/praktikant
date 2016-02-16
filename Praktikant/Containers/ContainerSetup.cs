@@ -1,7 +1,8 @@
-﻿using Autofac;
-using FruitMachine.Interfaces;
+﻿using System.Data.Entity;
+using Autofac;
 using FruitMachine.Models;
 using FruitMachine.Services;
+using FruitMachine.Services.Interfaces;
 
 namespace FruitMachine.Containers {
 	public class ContainerSetup {
@@ -15,7 +16,7 @@ namespace FruitMachine.Containers {
 			builder.RegisterType<FruitPrompterService>().As<IFruitPrompter>();
 			builder.RegisterType<FruitPickerService>().As<IFruitPicker>();
 			builder.RegisterType<FitnessOutputService>().As<IOutputService>();
-			builder.RegisterType<FruitMachineDbContext>().As<IDbHandler>();
+			builder.RegisterType<FruitMachineDbContext>().As<IDbHandler>().As<FruitMachineDbContext>();
 			builder.RegisterType<FruitMixer>();
 
 			return builder.Build();
