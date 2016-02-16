@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Linq;
 using FruitMachine.Models;
 using FruitMachine.Services.Interfaces;
 
@@ -23,14 +24,17 @@ namespace FruitMachine {
 
 			using (var dbContext = _dbHandler as FruitMachineDbContext)
 			{
-				int count;
-				if (dbContext != null)
+				var fruits = dbContext?.Fruits;
+
+				if (fruits?.Count() < 10)
 				{
-					var fruits = dbContext.Fruits;
+					var provided = provider.Provide(10);
+
+					fruits.AddRange(provided);
 				}
 			}
 
-			//var fruits = provider.Provide(10);
+			
 
 			//var fruitWish = prompter.Prompt();
 
