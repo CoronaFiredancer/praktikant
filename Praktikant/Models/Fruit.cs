@@ -12,7 +12,7 @@ namespace FruitMachine.Models {
 	[Table(name: "Fruits")]
 	public class Fruit {
 
-		public int FruitID { get; set; }
+		public int FruitId { get; set; }
 		public FruitType Type { get; set; }
 		public FruitColor Color { get; set; }
 		public int Weight { get; set; }

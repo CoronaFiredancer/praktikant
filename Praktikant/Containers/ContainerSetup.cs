@@ -7,19 +7,20 @@ using FruitMachine.Services.Interfaces;
 namespace FruitMachine.Containers {
 	public class ContainerSetup {
 
-		private ContainerBuilder builder;
+		private ContainerBuilder _builder;
 
 		public IContainer BuildContainer() {
-			builder = new ContainerBuilder();
+			_builder = new ContainerBuilder();
 
-			builder.RegisterType<FruitRandomizerService>().As<IFruitProvider>();
-			builder.RegisterType<FruitPrompterService>().As<IFruitPrompter>();
-			builder.RegisterType<FitnessPickerService>().As<IFruitPicker>();
-			builder.RegisterType<OutputService>().As<IOutputService>();
-			builder.RegisterType<FruitMachineDbContext>().As<IDbHandler>();
-			builder.RegisterType<FruitMixer>();
+			_builder.RegisterType<FruitRandomizerService>().As<IFruitProvider>();
+			_builder.RegisterType<FruitPrompterService>().As<IFruitPrompter>();
+			_builder.RegisterType<FitnessPickerService>().As<IFruitPicker>();
+			//_builder.RegisterType<ExactPickerService>().As<IFruitPicker>();
+			_builder.RegisterType<OutputService>().As<IOutputService>();
+			_builder.RegisterType<FruitMachineDbContext>().As<IDbHandler>();
+			_builder.RegisterType<FruitMixer>();
 
-			return builder.Build();
+			return _builder.Build();
 		}
 	}
 }

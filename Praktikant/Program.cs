@@ -1,6 +1,8 @@
 ﻿using System;
 using Autofac;
 using FruitMachine.Containers;
+using FruitMachine.Services;
+using FruitMachine.Services.Interfaces;
 
 namespace FruitMachine
 {
@@ -23,6 +25,12 @@ namespace FruitMachine
 
 			var containerSetup = new ContainerSetup();
 			var container = containerSetup.BuildContainer();
+			container.Resolve<FruitMixer>().Run();
+
+			var updater = new ContainerBuilder();
+			updater.RegisterType<ExactPickerService>().As<IFruitPicker>();
+			updater.Update(container);
+
 			container.Resolve<FruitMixer>().Run();
 
 			Console.ReadLine();

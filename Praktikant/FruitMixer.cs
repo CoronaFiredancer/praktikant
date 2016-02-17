@@ -7,17 +7,17 @@ using FruitMachine.Services.Interfaces;
 namespace FruitMachine {
 	public  class FruitMixer {
 
-		private readonly IFruitProvider provider;
-		private readonly IFruitPrompter prompter;
-		private readonly IFruitPicker picker;
-		private readonly IOutputService outputService;
+		private readonly IFruitProvider _provider;
+		private readonly IFruitPrompter _prompter;
+		private readonly IFruitPicker _picker;
+		private readonly IOutputService _outputService;
 		private readonly IDbHandler _dbHandler;
 
 		public FruitMixer(IFruitProvider provider, IFruitPrompter prompter, IFruitPicker picker, IOutputService outputService, IDbHandler dbHandler) {
-			this.provider = provider;
-			this.prompter = prompter;
-			this.picker = picker;
-			this.outputService = outputService;
+			this._provider = provider;
+			this._prompter = prompter;
+			this._picker = picker;
+			this._outputService = outputService;
 			_dbHandler = dbHandler;
 		}
 
@@ -32,7 +32,7 @@ namespace FruitMachine {
 
 				if (dbFruits?.Count() < 10)
 				{
-					var provided = provider.Provide(10);
+					var provided = _provider.Provide(10);
 
 					dbFruits.AddRange(provided);
 					dbContext.SaveChanges();
@@ -43,13 +43,13 @@ namespace FruitMachine {
 				fruits = dbFruits?.ToList();
 			}
 
-			outputService.PrintAvailable();
+			_outputService.PrintAvailable();
 
-			var fruitWish = prompter.Prompt();
+			var fruitWish = _prompter.Prompt();
 
-			var whatYouGet = picker.PickFruit(fruits, fruitWish);
+			var whatYouGet = _picker.PickFruit(fruits, fruitWish);
 
-			//outputService.PrintResult(whatYouGet.Key, whatYouGet.Value);
+			_outputService.PrintResult(whatYouGet.Key, whatYouGet.Value);
 		}
 	}
 }
