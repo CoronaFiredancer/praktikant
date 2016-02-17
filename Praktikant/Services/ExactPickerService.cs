@@ -8,19 +8,22 @@ using FruitMachine.Services.Interfaces;
 
 namespace FruitMachine.Services
 {
-	public class ExactPickerService : IFruitPicker
+	public class ExactPickerService : SuperPicker, IFruitPicker
 	{
+		public ExactPickerService(IDbHandler dbHandler) : base(dbHandler)
+		{
+		}
+
 		public KeyValuePair<Fruit, float> PickFruit(IEnumerable<Fruit> fruits, Fruit match)
 		{
 
-			var picked = fruits
-				.Where(x => x.Type == match.Type)
-				.Where(y => y.Color == match.Color)
-				.FirstOrDefault(z => z.Weight == match.Weight);
+			var picked =
+				fruits.Where(x => x.Type == match.Type).Where(y => y.Color == match.Color).FirstOrDefault(z => z.Weight == match.Weight);
 
-			return picked != null ? 
-				new KeyValuePair<Fruit, float>(picked, 100) : 
-				new KeyValuePair<Fruit, float>(null, 0);
+			if (picked == null) return new KeyValuePair<Fruit, float>(null, 0);
+
+			RemoveFromSupply(picked);
+			return new KeyValuePair<Fruit, float>(picked, 100);
 		}
 	}
 }

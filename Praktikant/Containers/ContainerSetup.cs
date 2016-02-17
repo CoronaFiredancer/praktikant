@@ -15,7 +15,7 @@ namespace FruitMachine.Containers {
 			_builder.RegisterType<FruitRandomizerService>().As<IFruitProvider>();
 			_builder.RegisterType<FruitPrompterService>().As<IFruitPrompter>();
 			_builder.RegisterType<FitnessPickerService>().As<IFruitPicker>();
-			//_builder.RegisterType<ExactPickerService>().As<IFruitPicker>();
+			//_builder.RegisterType<ExactPickerService>().As<IFruitPicker>(); //NO! last registered will win
 			_builder.RegisterType<OutputService>().As<IOutputService>();
 			_builder.RegisterType<FruitMachineDbContext>().As<IDbHandler>();
 			_builder.RegisterType<FruitMixer>();

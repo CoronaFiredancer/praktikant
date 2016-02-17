@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using FruitMachine.Models;
 using FruitMachine.Services.Interfaces;
 
 namespace FruitMachine.Services {
-	public class FitnessPickerService : IFruitPicker {
+	public class FitnessPickerService : SuperPicker, IFruitPicker {
 		private const float TypeFit = 0.7f;
 		private const float ColorFit = 0.2f;
 		private const float WeightFit = 0.1f;
+
+		public FitnessPickerService(IDbHandler dbHandler) : base(dbHandler)
+		{
+		}
 
 		/// <summary>
 		/// Matches existing fruit objects against list of criteria
@@ -21,7 +26,7 @@ namespace FruitMachine.Services {
 			return CalculateFitness(fruits, match);
 		}
 
-		private static KeyValuePair<Fruit, float> CalculateFitness(IEnumerable<Fruit> fruits, Fruit match) {
+		private KeyValuePair<Fruit, float> CalculateFitness(IEnumerable<Fruit> fruits, Fruit match) {
 			var bestFitness = 0.0f;
 			var mostFitFruit = new Fruit();
 
@@ -46,11 +51,14 @@ namespace FruitMachine.Services {
 				bestFitness = fitness;
 				mostFitFruit = fruit;
 			}
-			return new KeyValuePair<Fruit, float>(mostFitFruit, bestFitness);
+
+			RemoveFromSupply(mostFitFruit);
+
+			return new KeyValuePair<Fruit, float>(mostFitFruit, bestFitness * 100);
 		}
 
-		private static float PercentDeviation(int setPoint, int observation) {
-			var c = (Math.Abs(observation - setPoint) / (float) observation );
+		private static float PercentDeviation(int target, int observation) {
+			var c = Math.Abs(observation - target) / (float) observation;
 			return c;
 		}
 	}

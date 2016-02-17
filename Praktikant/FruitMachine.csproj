@@ -71,6 +71,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\OutputService.cs" />
     <Compile Include="Services\FruitPrompterService.cs" />
+    <Compile Include="Services\SuperPicker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
