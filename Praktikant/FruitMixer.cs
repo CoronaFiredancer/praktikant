@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using FruitMachine.Models;
 using FruitMachine.Services.Interfaces;
@@ -20,25 +21,33 @@ namespace FruitMachine {
 			_dbHandler = dbHandler;
 		}
 
-		public void Run() {
+		public void Run()
+		{
+
+			List<Fruit> fruits;
 
 			using (var dbContext = _dbHandler as FruitMachineDbContext)
 			{
-				var fruits = dbContext?.Fruits;
+				var dbFruits = dbContext?.Fruits;
 
-				if (fruits?.Count() < 10)
+				if (dbFruits?.Count() < 10)
 				{
 					var provided = provider.Provide(10);
 
-					fruits.AddRange(provided);
+					dbFruits.AddRange(provided);
+					dbContext.SaveChanges();
+
+					dbFruits = dbContext.Fruits;
 				}
+
+				fruits = dbFruits?.ToList();
 			}
 
-			
+			outputService.PrintAvailable();
 
-			//var fruitWish = prompter.Prompt();
+			var fruitWish = prompter.Prompt();
 
-			//var whatYouGet = picker.PickFruit(fruits, fruitWish);
+			var whatYouGet = picker.PickFruit(fruits, fruitWish);
 
 			//outputService.PrintResult(whatYouGet.Key, whatYouGet.Value);
 		}

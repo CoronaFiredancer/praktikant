@@ -11,26 +11,26 @@ namespace FruitMachine.Services {
 			FruitColor wishColor;
 
 			Console.Write("Fruit: ");
-			var x = Console.ReadLine();
-			if (string.IsNullOrEmpty(x)) {
+			var consoleInput = Console.ReadLine();
+			if (string.IsNullOrEmpty(consoleInput)) {
 				wishType = FruitType.None;
 			}
 			else {
-				wishType = (FruitType)Enum.Parse(typeof(FruitType), x, true);
+				wishType = (FruitType)Enum.Parse(typeof(FruitType), consoleInput, true);
 			}
 
 			Console.Write("Colour: ");
-			x = Console.ReadLine();
-			if (string.IsNullOrEmpty(x)) {
+			consoleInput = Console.ReadLine();
+			if (string.IsNullOrEmpty(consoleInput)) {
 				wishColor = FruitColor.None;
 			}
 			else {
-				wishColor = (FruitColor)Enum.Parse(typeof(FruitColor), x, true);
+				wishColor = (FruitColor)Enum.Parse(typeof(FruitColor), consoleInput, true);
 			}
 
 			Console.Write("Weight: ");
-			x = Console.ReadLine();
-			var wishWeight = string.IsNullOrEmpty(x) ? 0 : int.Parse(x);
+			consoleInput = Console.ReadLine();
+			var wishWeight = string.IsNullOrEmpty(consoleInput) ? 0 : int.Parse(consoleInput);
 
 			return new Fruit(wishType, wishColor, wishWeight);
 		}

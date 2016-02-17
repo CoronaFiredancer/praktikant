@@ -4,7 +4,7 @@ using FruitMachine.Models;
 using FruitMachine.Services.Interfaces;
 
 namespace FruitMachine.Services {
-	public class FruitPickerService : IFruitPicker {
+	public class FitnessPickerService : IFruitPicker {
 		private const float TypeFit = 0.7f;
 		private const float ColorFit = 0.2f;
 		private const float WeightFit = 0.1f;

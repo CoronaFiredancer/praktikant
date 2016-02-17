@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Containers\ContainerSetup.cs" />
     <Compile Include="FruitMixer.cs" />
+    <Compile Include="Services\ExactPickerService.cs" />
     <Compile Include="Services\Interfaces\IFruitPicker.cs" />
     <Compile Include="Services\Interfaces\IFruitProvider.cs" />
     <Compile Include="Services\Interfaces\IFruitPrompter.cs" />
@@ -65,10 +66,10 @@
     <Compile Include="Models\IDbHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Models\Fruit.cs" />
-    <Compile Include="Services\FruitPickerService.cs" />
+    <Compile Include="Services\FitnessPickerService.cs" />
     <Compile Include="Services\FruitRandomizerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\FitnessOutputService.cs" />
+    <Compile Include="Services\OutputService.cs" />
     <Compile Include="Services\FruitPrompterService.cs" />
   </ItemGroup>
   <ItemGroup>

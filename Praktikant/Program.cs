@@ -13,7 +13,7 @@ namespace FruitMachine
 			 * This is tightly coupled, we can do better
 			var provider = new FruitRandomizerService();
 		    var prompter = new FruitPrompterService();
-		    var picker = new FruitPickerService();
+		    var picker = new FitnessPickerService();
 			var resultWriter = new OutputService();
 			
 			var mixer = new FruitMixer(provider, prompter, picker, resultWriter);
