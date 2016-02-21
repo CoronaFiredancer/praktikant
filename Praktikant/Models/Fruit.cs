@@ -30,7 +30,7 @@ namespace FruitMachine.Models {
 		}
 
 		public override string ToString() {
-			return "[" + Color + ", " + Type + ", " + Weight + "]";
+			return "[" + Type + ", " + Color + ", " + Weight + "]";
 		}
 	}
 }

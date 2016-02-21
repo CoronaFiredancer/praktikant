@@ -14,10 +14,10 @@ namespace FruitMachine {
 		private readonly IDbHandler _dbHandler;
 
 		public FruitMixer(IFruitProvider provider, IFruitPrompter prompter, IFruitPicker picker, IOutputService outputService, IDbHandler dbHandler) {
-			this._provider = provider;
-			this._prompter = prompter;
-			this._picker = picker;
-			this._outputService = outputService;
+			_provider = provider;
+			_prompter = prompter;
+			_picker = picker;
+			_outputService = outputService;
 			_dbHandler = dbHandler;
 		}
 
