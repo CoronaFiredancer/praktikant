@@ -1,8 +1,10 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel;
+using System.Data.Entity;
 using Autofac;
 using FruitMachine.Models;
 using FruitMachine.Services;
 using FruitMachine.Services.Interfaces;
+using IContainer = Autofac.IContainer;
 
 namespace FruitMachine.Containers {
 	public class ContainerSetup {
